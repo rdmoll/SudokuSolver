@@ -39,7 +39,7 @@ def main():
     for k in range(0, 5):
         for i in range(0, 9):
             for j in range(0, 9):
-                if (cell_grid[i][j] == 0):
+                if (cell_grid[i][j].value == 0):
                     cell_grid[i][j].update_possible(val_grid)
                     cell_grid[i][j].update_unique(cell_grid)
                     if (cell_grid[i][j] != 0):
