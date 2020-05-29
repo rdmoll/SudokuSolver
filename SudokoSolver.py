@@ -36,16 +36,16 @@ def main():
 
     cell_grid = [ [ Cell(i, j, val_grid[i][j]) for j in range(0, 9) ] for i in range(0, 9) ]
 
-    for k in range(0, 5):
+    for k in range(0, 10):
         for i in range(0, 9):
             for j in range(0, 9):
                 if (cell_grid[i][j].value == 0):
                     cell_grid[i][j].update_possible(val_grid)
                     cell_grid[i][j].update_unique(cell_grid)
-                    if (cell_grid[i][j] != 0):
+                    if (cell_grid[i][j].value != 0):
                         val_grid[i][j] = cell_grid[i][j].value
 
-        #print_grid(val_grid)
+        print_grid(val_grid)
 
 if __name__ == "__main__":
     main()
