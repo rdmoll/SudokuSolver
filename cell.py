@@ -13,6 +13,9 @@ class Cell:
         self.tileRow = row // 3
         self.tileCol = col // 3
 
+    def printRowCol(self):
+        print(self.row, " , ", self.col, " , ", self.value)
+
     def update_possible(self, val_grid):
         for i in range(0, 9):
             if (i != self.col):
@@ -48,6 +51,7 @@ class Cell:
             squareUnique = True
             for i in range(3*self.tileRow, 3*self.tileRow + 3):
                 for j in range(3*self.tileCol, 3*self.tileCol + 3):
+                    #print(self.tileRow," , ",self.tileCol)
                     if (i != self.col and j != self.row):
                         if pv in cell_grid[i][j].possible_values:
                             squareUnique = False
