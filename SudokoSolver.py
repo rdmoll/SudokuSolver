@@ -36,24 +36,23 @@ def main():
 
     cell_grid = [ [ Cell(i, j, val_grid[i][j]) for j in range(0, 9) ] for i in range(0, 9) ]
 
-    for k in range(0, 1):
-        for i in range(0, 9):
-            for j in range(0, 9):
-                if (cell_grid[i][j].value == 0):
-                    print(cell_grid[i][j].row, " , ", cell_grid[i][j].col, " , ", cell_grid[i][j].value)
-                    cell_grid[i][j].printRowCol()
-                    #cell_grid[i][j].update_unique(cell_grid)
-
     #for k in range(0, 1):
     #    for i in range(0, 9):
     #        for j in range(0, 9):
     #            if (cell_grid[i][j].value == 0):
-    #                #print(i," , ",j)
-    #                #cell_grid[i][j].update_possible(val_grid)
-    #                cell_grid[i][j].update_unique(cell_grid)
-    #                if (cell_grid[i][j].value != 0):
-    #                    val_grid[i][j] = cell_grid[i][j].value
-    #    print_grid(val_grid)
+    #                print(cell_grid[i][j].row, " , ", cell_grid[i][j].col, " , ", cell_grid[i][j].value)
+    #                cell_grid[i][j].printRowCol()
+    #                #cell_grid[i][j].update_unique(cell_grid)
+
+    for k in range(0, 7):
+        for i in range(0, 9):
+            for j in range(0, 9):
+                if (cell_grid[i][j].value == 0):
+                    cell_grid[i][j].update_possible(val_grid)
+                    cell_grid[i][j].update_unique(cell_grid)
+                    if (cell_grid[i][j].value != 0):
+                        val_grid[i][j] = cell_grid[i][j].value
+        print_grid(val_grid)
 
 if __name__ == "__main__":
     main()

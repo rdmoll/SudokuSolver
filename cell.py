@@ -6,7 +6,10 @@ class Cell:
         self.row = row
         self.col = col
         self.value = value
-        self.possible_values = np.arange(1,10)
+        if value == 0:
+            self.possible_values = np.arange(1,10)
+        else:
+            self.possible_values = np.arange(value,value+1)
         self.possible_in_row = np.arange(1,10)
         self.possible_in_col = np.arange(1,10)
         self.possible_in_tile = np.arange(1,10)
@@ -49,12 +52,18 @@ class Cell:
                         colUnique = False
 
             squareUnique = True
+            if (self.row == 5) and (self.col == 8):
+                print("TEST")
             for i in range(3*self.tileRow, 3*self.tileRow + 3):
                 for j in range(3*self.tileCol, 3*self.tileCol + 3):
-                    #print(self.tileRow," , ",self.tileCol)
+                    if (self.row == 5) and (self.col == 8):
+                        print(i," , ",j," , ",cell_grid[i][j].possible_values)
                     if (i != self.col and j != self.row):
                         if pv in cell_grid[i][j].possible_values:
                             squareUnique = False
+
+            if (self.row == 5) and (self.col == 8):
+                print(squareUnique)
 
             if (rowUnique or colUnique or squareUnique):
                 self.value = pv
