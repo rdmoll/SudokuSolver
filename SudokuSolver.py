@@ -15,7 +15,7 @@ def print_grid(val_grid):
 def main():
 
     # Read initial grid from csv file
-    val_grid_trans = pd.read_csv("inputGrid.csv",header=None)
+    val_grid_trans = pd.read_csv("inputGridExpert.csv",header=None)
     val_grid = np.transpose(val_grid_trans)
 
     # Initialize grid cells, rows, cols, and tiles
