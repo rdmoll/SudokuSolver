@@ -55,6 +55,9 @@ def main():
     print_grid(val_grid)
     print()
     for i in range(0, 9):
+        for j in range(0, 9):
+            print("Cell (",cell_grid[i][j].row,",",cell_grid[i][j].col,") : ",cell_grid[i][j].possible_values)
+    for i in range(0, 9):
         rows[i].check_complete(cell_grid)
     for i in range(0, 9):
         cols[i].check_complete(cell_grid)
