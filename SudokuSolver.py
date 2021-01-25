@@ -51,6 +51,8 @@ def main():
             for j in range(0, 9):
                 val_grid[i][j] = cell_grid[i][j].value
 
+        # Run more complex checks for expert level puzzles
+
     # Print result grid, run accuracy checks
     print_grid(val_grid)
     print()
